@@ -39,7 +39,55 @@
                 <label for="uppercase">Include Uppercase Characters : </label>
                 <input type="checkbox" name="uppercase" id="uppercase" checked> ( e.g. ABCDEFGH )
             </div>
+            <div class="input">
+                <label for="beginwithletter">Begin With A Letter : </label>
+                <input type="checkbox" name="beginwithletter" id="beginwithletter" checked> ( don't begin with a number
+                or symbol )
+            </div>
+            <div class="input">
+                <label for="symbols">Include Symbols : </label>
+                <input type="checkbox" name="symbols" id="symbols" checked>
+                <input type="text" name="" id="" value="!;#$%&'()*+,-./:;<=>?@[]^_`{|}~">
+            </div>
+            <div class="input">
+                <label for="nosimilarchar">No Similar Characters : </label>
+                <input type="checkbox" name="nosimilarchar" id="nosimilarchar" checked> ( don't use characters like i,
+                l, 1, L, o, 0, O, etc. )
+            </div>
+            <div class="input">
+                <label for="noduplicatechar">No Duplicate Characters : </label>
+                <input type="checkbox" name="noduplicatechar" id="noduplicatechar" checked> ( don't use the same
+                character more than once )
+            </div>
+            <div class="input">
+                <label for="nosequentialchar">No Sequential Characters : </label>
+                <input type="checkbox" name="nosequentialchar" id="nosequentialchar" checked> ( don't use sequential
+                characters, e.g. abc, 789 )
+            </div>
+            <div class="input">
+                <label for="autogenerate">Auto Generate On The First Call : </label>
+                <input type="checkbox" name="autogenerate" id="autogenerate" checked> ( generate passwords automatically
+                when you open this page )
+            </div>
+            <div class="input">
+                <label for="quantity">Quantity : </label>
+                <select name="quantity" id="quantity">
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="btns">
+                <button>Generate Password</button>
+                <button>Copy</button>
+            </div>
+            <div class="output">
+                <label for="password">Your New Passwords : </label>
+                <textarea name="" id="" cols="60" rows="4"></textarea>
+            </div>
         </div>
+        <footer>
+            <p>Copyright &#169; 2012 - 2023</p>
+            <a href="#">Password Generator</a>
+        </footer>
     </div>
 </body>
 

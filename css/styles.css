@@ -19,6 +19,7 @@ body{
 header{
     display: flex;
     align-items: center;
+    margin: 20px;
 }
 
 .header-text{
@@ -30,3 +31,33 @@ sup{
     font-weight: normal;
 }
 
+footer{
+    display: flex;
+}
+
+footer a{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+footer a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.output{
+    display: flex;
+}
+
+.input{
+    display: flex;
+    margin: 20px 50px;
+}
+
+.input label{
+    margin-right: 50px;
+}
+
+.input input{
+    margin: 0px;
+}
