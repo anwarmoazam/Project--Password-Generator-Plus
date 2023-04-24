@@ -61,3 +61,18 @@ footer a:hover{
 .input input{
     margin: 0px;
 }
+
+.btns{
+    margin: 20px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.output{
+    margin: 20px 50px;
+}
+
+footer{
+    margin: 20px 50px;
+    justify-content: center;
+}
