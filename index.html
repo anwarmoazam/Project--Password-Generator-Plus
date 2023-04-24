@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator Plus</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./img/logo2017.png" alt="">
+            </div>
+            <div class="header-text">
+                <h2>Password Generator Plus<sup>Beta</sup></h2>
+            </div>
+        </header>
+        <div class="selectors">
+            <div class="input">
+                <label for="length">Password Length : </label>
+                <select name="length" id="length">
+                    <option value="weak">Weak</option>
+                    <option value="strong">Strong</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="numbers">Include Numbers : </label>
+                <input type="checkbox" name="numbers" id="numbers" checked> ( e.g. 123456 )
+            </div>
+            <div class="input">
+                <label for="lowercase">Include Lowercase Characters : </label>
+                <input type="checkbox" name="lowercase" id="lowercase" checked> ( e.g. abcdefgh )
+            </div>
+            <div class="input">
+                <label for="uppercase">Include Uppercase Characters : </label>
+                <input type="checkbox" name="uppercase" id="uppercase" checked> ( e.g. ABCDEFGH )
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
