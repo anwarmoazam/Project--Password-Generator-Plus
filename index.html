@@ -22,69 +22,140 @@
         <div class="selectors">
             <div class="input">
                 <label for="length">Password Length : </label>
-                <select name="length" id="length">
-                    <option value="weak">Weak</option>
-                    <option value="strong">Strong</option>
-                </select>
+                <div class="filter">
+                    <select name="length" id="length">
+                        <optgroup label="Weak" value="weak">
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </optgroup>
+                        <optgroup label="Strong" value="strong">
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                        </optgroup>
+                    </select>
+                </div>
             </div>
             <div class="input">
                 <label for="numbers">Include Numbers : </label>
-                <input type="checkbox" name="numbers" id="numbers" checked>
-                <span>( e.g. 123456 )</span>
+                <div class="filter">
+                    <input type="checkbox" name="numbers" id="numbers" checked>
+                    <span>( e.g. 123456 )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="lowercase">Include Lowercase Characters : </label>
-                <input type="checkbox" name="lowercase" id="lowercase" checked>
-                <span>( e.g. abcdefgh )</span>
+                <div class="filter">
+                    <input type="checkbox" name="lowercase" id="lowercase" checked>
+                    <span>( e.g. abcdefgh )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="uppercase">Include Uppercase Characters : </label>
-                <input type="checkbox" name="uppercase" id="uppercase" checked>
-                <span>( e.g. ABCDEFGH )</span>
+                <div class="filter">
+                    <input type="checkbox" name="uppercase" id="uppercase" checked>
+                    <span>( e.g. ABCDEFGH )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="beginwithletter">Begin With A Letter : </label>
-                <input type="checkbox" name="beginwithletter" id="beginwithletter" checked>
-                <span>( don't begin with a number or symbol )</span>
+                <div class="filter">
+                    <input type="checkbox" name="beginwithletter" id="beginwithletter" checked>
+                    <span>( don't begin with a number or symbol )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="symbols">Include Symbols : </label>
-                <input type="checkbox" name="symbols" id="symbols" checked>
-                <span>
-                    <input type="text" name="" id="" value="!;#$%&'()*+,-./:;<=>?@[]^_`{|}~">
-                </span>
+                <div class="filter">
+                    <input type="checkbox" name="symbols" id="symbols" checked>
+                    <span>
+                        <input type="text" name="" id="symbolstype" value="!;#$%&'()*+,-./:;<=>?@[]^_`{|}~">
+                    </span>
+                </div>
             </div>
             <div class="input">
                 <label for="nosimilarchar">No Similar Characters : </label>
-                <input type="checkbox" name="nosimilarchar" id="nosimilarchar" checked>
-                <span>( don't use characters like i, l, 1, L, o, 0, O, etc. )</span>
+                <div class="filter">
+                    <input type="checkbox" name="nosimilarchar" id="nosimilarchar" checked>
+                    <span>( don't use characters like i, l, 1, L, o, 0, O, etc. )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="noduplicatechar">No Duplicate Characters : </label>
-                <input type="checkbox" name="noduplicatechar" id="noduplicatechar" checked>
-                <span>( don't use the same character more than once )</span>
+                <div class="filter">
+                    <input type="checkbox" name="noduplicatechar" id="noduplicatechar" checked>
+                    <span>( don't use the same character more than once )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="nosequentialchar">No Sequential Characters : </label>
-                <input type="checkbox" name="nosequentialchar" id="nosequentialchar" checked>
-                <span>( don't use sequential characters, e.g. abc, 789 )</span>
+                <div class="filter">
+                    <input type="checkbox" name="nosequentialchar" id="nosequentialchar" checked>
+                    <span>( don't use sequential characters, e.g. abc, 789 )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="autogenerate">Auto Generate On The First Call : </label>
-                <input type="checkbox" name="autogenerate" id="autogenerate" checked>
-                <span>( generate passwords automatically when you open this page )</span>
+                <div class="filter">
+                    <input type="checkbox" name="autogenerate" id="autogenerate" checked>
+                    <span>( generate passwords automatically when you open this page )</span>
+                </div>
             </div>
             <div class="input">
                 <label for="quantity">Quantity : </label>
-                <select name="quantity" id="quantity">
-                    <option value="1">1</option>
-                </select>
+                <div class="filter">
+                    <select name="quantity" id="quantity">
+                        <option value="1">1</option>
+                    </select>
+                </div>
             </div>
-            <div class="btns">
-                <button>Generate Password</button>
-                <button>Copy</button>
+            <div class="input">
+                <div class="filter btns">
+                    <button id="generate">Generate Password</button>
+                    <button id="copy">Copy</button>
+                </div>
             </div>
-            <div class="output">
+            <div class="input output">
                 <label for="password">Your New Passwords : </label>
                 <textarea name="" id="" cols="60" rows="4"></textarea>
             </div>
@@ -94,6 +165,7 @@
             <a href="#">Password Generator</a>
         </footer>
     </div>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
