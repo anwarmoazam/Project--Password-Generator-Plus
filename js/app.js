@@ -2,7 +2,7 @@ let password = "";
 const numberSet = "1234567890";
 const lowerCaseSet = "abcdefghijklmnopqrstuvwxyz";
 const upperCaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const symbolsSet = "!;#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+const symbolsSet = "";
 
 // selectors
 const length = document.getElementById('length');
@@ -16,6 +16,7 @@ const noDuplicateCharaterInput = document.getElementById('noduplicatechar');
 const noSequentialCharacterInput = document.getElementById('nosequentialchar');
 const generatePasswordBtn = document.getElementById('generate');
 const copyPasswordBtn = document.getElementById('copy');
+const symbols = document.getElementById('symbolstype');
 
 const getRandomData = (dataset) => {
     return dataset[Math.floor(Math.random() * dataset.length)];
@@ -23,24 +24,10 @@ const getRandomData = (dataset) => {
 
 const generatePassword = () => {
     const passwordLength = length.value;
-    console.log(passwordLength);
-    if(numberInput.checked){
-        for(let i=0; i<passwordLength; i++){
-            password += getRandomData(numberSet);
-            console.log(password);
-        }
-    }
-    if(lowerCaseInput.checked){
-        for(let i=0; i<passwordLength; i++){
-            password += getRandomData(lowerCaseSet);
-            console.log(password);
-        }
-    }
-    // if(password.length < passwordLength){
-    //     return generatePassword();
-    // }
+
 }
 
 generatePasswordBtn.addEventListener('click',function(){
     generatePassword();
+
 });
