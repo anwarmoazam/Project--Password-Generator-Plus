@@ -27,7 +27,6 @@ let similarCharSet = [
     ['2','Z','z'],['m','n','r'],['u','v','y'],['p','d'],['C','G','c','e'],['a','e'],['V','Y','W','w'],
     ['A','R','K','k'],['x','X','*'],['h','n','b']
 ];
-let similarCharSet1 = ['Il1!','0OoDQ','5Ss','8B','6bG','9gq','2Zz','mnr','uvy','pd','CGce','ae','VYWw','ARKk','xX*','hnb'];
 
 // selectors
 const length = document.getElementById('length');
