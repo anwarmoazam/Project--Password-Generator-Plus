@@ -172,7 +172,6 @@ const generatePassword = (str) => {
                     }
                 }
             }
-
         }
     }
     return randomPassword;
