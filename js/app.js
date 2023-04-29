@@ -138,6 +138,43 @@ const generatePassword = (str) => {
             index++;
         }
     }
+
+    if (noSequentialCharacterInput.checked) {
+        str = `${numberSet},${upperCaseSet},${lowerCaseSet}`;
+        let str1 = str.split(',');
+        console.log("Sequential checked");
+        console.log(str1);
+        for (let i = 1; i < randomPassword.length; i++) {
+            let firstChar = randomPassword[i - 1], nextChar = randomPassword[i];
+            console.log('first element i-1 : ', randomPassword[i - 1]);
+            console.log('second element i : ', randomPassword[i]);
+            for (let j = 0; j < str1.length; j++) {
+                console.log(str1[j]);
+                for(let k=1; k<str1[j].length; k++){
+                    console.log('first element k : ', str1[j][k-1]);
+                    console.log('second element j : ', str1[j][k]);
+                    if (firstChar === str1[j][k - 1] && nextChar === str1[j][k]) {
+                        console.log('if condition');
+                        console.log("Sequential Char found");
+                        console.log('before random password = ',randomPassword);
+                        let start = "", end = "", newChar = "";
+                        str = str.replace(randomPassword[i], "");
+                        console.log('str = ',str);
+                        start = randomPassword.substr(0, i);
+                        console.log('start = ',start);
+                        end = randomPassword.substr(i);
+                        console.log('end = ',end);
+                        newChar = getRandomData(str);
+                        end = end.replace(randomPassword[i], newChar);
+                        str = str.replace(end[0], "");
+                        randomPassword = start + end;
+                        console.log('after random password = ',randomPassword);
+                    }
+                }
+            }
+
+        }
+    }
     return randomPassword;
 }
 
