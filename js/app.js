@@ -50,6 +50,7 @@ const result = document.getElementById('result');
 const generatePasswordBtn = document.getElementById('generate');
 const copyPasswordBtn = document.getElementById('copy');
 const symbols = document.getElementById('symbolstype');
+const passwordQty = document.getElementById('quantity');
 
 const getRandomData = (dataset) => {
     return dataset[Math.floor(Math.random() * dataset.length)];
@@ -162,6 +163,7 @@ const generatePassword = (str) => {
                 }
             }
         }
+        result.value = randomPassword;
     }
     return randomPassword;
 }
@@ -185,11 +187,17 @@ generatePasswordBtn.addEventListener('click', function () {
         result.value = "You have selected too large password length.";
     }
     else{
+
         console.log('false in if condition on btn click event')
         password = generatePassword(password);
     }
     console.log('after generate password = ',password);
 });
+
+copyPasswordBtn.addEventListener('click',function(){
+    result.select();
+    document.execCommand("copy");
+})
 
 const validateChecks = () => {
     let str = "";
