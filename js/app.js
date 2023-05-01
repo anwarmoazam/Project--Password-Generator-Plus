@@ -59,11 +59,11 @@ const getRandomData = (dataset) => {
 const generatePassword = (str) => {
     let onlyAlphabetSet = "";
     let randomPassword = "";
-    console.log('str in generatepass function',str);
+    console.log('str in generatepass function', str);
     for (let i = 0; i < length.value; i++) {
         randomPassword += getRandomData(str);
     }
-    console.log('random password generated : ',randomPassword);
+    console.log('random password generated : ', randomPassword);
     if (beginWithLetterInput.checked) {
         if (numberSet.includes(randomPassword[0]) || symbolsSet.includes(randomPassword[0])) {
             onlyAlphabetSet = onlyAlphabetSet.concat(lowerCaseSet, upperCaseSet);
@@ -120,8 +120,11 @@ const generatePassword = (str) => {
     }
 
     if (noDuplicateCharaterInput.checked) {
-        let index = 0;
         let tempStr = str;
+
+        /*
+        let index = 0;
+        
         while ((index < randomPassword.length) && (tempStr!='')) {
             let char = randomPassword[index];
             tempStr = tempStr.replace(randomPassword[index], "");
@@ -140,7 +143,27 @@ const generatePassword = (str) => {
             }
             index++;
         }
-        result.value = randomPassword;
+        */
+
+        let unique = "";
+        for (let i = 0; i < randomPassword.length; i++) {
+            if (unique.includes(randomPassword[i]) === false) {
+                console.log('randompassword[i] in if block',randomPassword[i]);
+                unique += randomPassword[i];
+                tempStr = tempStr.replace(randomPassword[i],"");
+                console.log('tempstr',tempStr);
+                console.log('unique password', unique);
+            } else {
+                console.log('randompassword[i] in else block ',randomPassword[i]);
+                unique += getRandomData(tempStr);
+                tempStr = tempStr.replace(unique[unique.length-1],"");
+                console.log('tempstr',tempStr);
+                console.log('unique password', unique);
+            }
+            console.log('unique ',unique);
+        }
+        randomPassword = unique;
+        // result.value = randomPassword;
     }
 
     if (noSequentialCharacterInput.checked) {
@@ -149,7 +172,7 @@ const generatePassword = (str) => {
         for (let i = 1; i < randomPassword.length; i++) {
             let firstChar = randomPassword[i - 1], nextChar = randomPassword[i];
             for (let j = 0; j < strArr.length; j++) {
-                for(let k=1; k<strArr[j].length; k++){
+                for (let k = 1; k < strArr[j].length; k++) {
                     if (firstChar === strArr[j][k - 1] && nextChar === strArr[j][k]) {
                         let start = "", end = "", newChar = "";
                         tempStr = tempStr.replace(randomPassword[i], "");
@@ -180,21 +203,22 @@ generatePasswordBtn.addEventListener('click', function () {
     console.log('btn click listen');
     let password = "";
     password = validateChecks();
-    console.log('password in btn click event from validate check : ',password);
-    console.log('before generate password = ',password);
-    if(length.value > password.length){
+    console.log('password in btn click event from validate check : ', password);
+    console.log('before generate password = ', password);
+    if (length.value > password.length) {
         console.log('true in if condition on btn click event');
         result.value = "You have selected too large password length.";
     }
-    else{
+    else {
 
         console.log('false in if condition on btn click event')
         password = generatePassword(password);
+        result.value = password;
     }
-    console.log('after generate password = ',password);
+    console.log('after generate password = ', password);
 });
 
-copyPasswordBtn.addEventListener('click',function(){
+copyPasswordBtn.addEventListener('click', function () {
     result.select();
     document.execCommand("copy");
 })
