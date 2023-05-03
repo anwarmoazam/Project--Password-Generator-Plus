@@ -71,6 +71,7 @@ const generatePassword = (str) => {
         }
         console.log('random password in begin check',randomPassword);
     }
+
     if (noSimilarCharacterInput.checked) {
         let char = "";
         let temp = [];
@@ -108,7 +109,6 @@ const generatePassword = (str) => {
                 }
             }
         }
-        console.log('similar check on');
     }
 
     if (noDuplicateCharaterInput.checked) {
