@@ -30,9 +30,9 @@ let symbolsSet = "";
 // ];
 
 let similarCharSet = [
-    ['I', 'l', '1', '!'], ['0', 'O', 'o', 'D', 'Q'], ['5', 'S', 's'], ['8', 'B'], ['6', 'b', 'G', 'h', 'n'], ['9', 'g', 'q'],
+    ['I', 'l', '1', '!'], ['0', 'O', 'o', 'D', 'Q'], ['5', 'S', 's'], ['8', 'B'], ['6', 'b', 'G'], ['9', 'g', 'q'],
     ['2', 'Z', 'z'], ['m', 'n', 'r'], ['u', 'v', 'y'], ['p', 'd'], ['C', 'G', 'c', 'e'], ['a', 'e'], ['V', 'Y', 'W', 'w'],
-    ['A', 'R', 'K', 'k'], ['x', 'X', '*']
+    ['A', 'R', 'K', 'k'], ['x', 'X', '*'],['h', 'n', 'b']
 ];
 
 // selectors
@@ -71,7 +71,7 @@ const generatePassword = (str) => {
         }
         console.log('random password in begin check',randomPassword);
     }
-
+    
     if (noSimilarCharacterInput.checked) {
         let char = "";
         let temp = [];
@@ -138,7 +138,7 @@ const generatePassword = (str) => {
         */
 
         let unique = "";
-        for (let i = 0; i < randomPassword.length; i++) {
+        for (let i = 0; i < randomPassword.length-1; i++) {
             if (unique.includes(randomPassword[i]) === false) {
                 console.log('randompassword[i] in if block',randomPassword[i]);
                 unique += randomPassword[i];
