@@ -69,13 +69,9 @@ const generatePassword = (str) => {
             onlyAlphabetSet = onlyAlphabetSet.concat(lowerCaseSet, upperCaseSet);
             randomPassword = randomPassword.replace(randomPassword[0], getRandomData(onlyAlphabetSet));
         }
+        console.log('random password in begin check',randomPassword);
     }
     if (noSimilarCharacterInput.checked) {
-        // BF2gu>]Cl^v2AU%)`cUp
-        // randomPassword = "BF2gu>]Cl^v2AU%)`cUp";
-        // randomPassword = "oP?)>6RB$xu{.oS]f[`Elm.^M?-bMlmiZ/[9%];U";
-
-        /*
         let char = "";
         let temp = [];
         for (let i = 0; i < similarCharSet.length; i++) {
@@ -84,7 +80,6 @@ const generatePassword = (str) => {
                 console.log("inner loop");
                 console.log(similarCharSet[i][j]);
                 if (randomPassword.includes(similarCharSet[i][j])) {
-                    // console.log(similarCharSet[i][j]);
                     console.log("if block");
                     char = similarCharSet[i][j];
                     console.log(char);
@@ -94,7 +89,6 @@ const generatePassword = (str) => {
                     console.log(index);
                     temp.splice(index, 1);
                     console.log('After delete element', temp);
-
                     for (let k = 0; k < temp.length; k++) {
                         console.log('temp[k]', temp[k]);
                         if (randomPassword.includes(temp[k])) {
@@ -115,8 +109,6 @@ const generatePassword = (str) => {
             }
         }
         console.log('similar check on');
-        */
-
     }
 
     if (noDuplicateCharaterInput.checked) {
@@ -163,7 +155,6 @@ const generatePassword = (str) => {
             console.log('unique ',unique);
         }
         randomPassword = unique;
-        // result.value = randomPassword;
     }
 
     if (noSequentialCharacterInput.checked) {
@@ -186,7 +177,6 @@ const generatePassword = (str) => {
                 }
             }
         }
-        result.value = randomPassword;
     }
     return randomPassword;
 }
